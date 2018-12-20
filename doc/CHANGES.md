@@ -2,6 +2,7 @@
 
 ## Highlighted Features
 
+* Drop support for Debian Jessie (Gareth Rees)
 * Uses the url_name instead of a numeric id when sending messages between users
   to prevent id guessing (Liz Conlan)
 * Warn users when their request is getting too long (Zarino Zappia)
@@ -38,6 +39,8 @@
   _trait_ instead if you rely on this in theme specs. See
   https://github.com/thoughtbot/factory_bot/blob/v4.10.0/GETTING_STARTED.md#traits
   for more information on traits.
+* We no longer support Debian Jessie. Please upgrade to Debian Stretch at the
+  earliest opportinuity.
 
 # 0.32.0.0
 
