@@ -118,7 +118,17 @@ class FollowupsController < ApplicationController
   end
 
   def outgoing_message_params
-    params_outgoing_message = params[:outgoing_message] ? params[:outgoing_message].clone : {}
+    params_outgoing_message =
+      if params[:outgoing_message]
+        if rails5?
+          params[:outgoing_message].to_unsafe_h
+        else
+          params[:outgoing_message].clone
+        end
+      else
+        {}
+      end
+
     params_outgoing_message.merge!({
                                      :status => 'ready',
                                      :message_type => 'followup',
