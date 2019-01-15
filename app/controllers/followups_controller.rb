@@ -130,10 +130,10 @@ class FollowupsController < ApplicationController
       end
 
     params_outgoing_message.merge!({
-                                     :status => 'ready',
-                                     :message_type => 'followup',
-                                     :incoming_message_followup_id => @incoming_message.try(:id),
-                                     :info_request_id => @info_request.id
+      status: 'ready',
+      message_type: 'followup',
+      incoming_message_followup_id: @incoming_message.try(:id),
+      info_request_id: @info_request.id
     })
     params_outgoing_message[:what_doing] = 'internal_review' if @internal_review
 
